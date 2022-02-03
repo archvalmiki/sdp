@@ -1,0 +1,19 @@
+4fd49901fc8c413583f750294fe91e07
+
+
+
+mvn sonar:sonar -Dsonar.projectName=SimpleGreetingMaven -Dsonar.projectKey=SimpleGreetingMaven -Dsonar.host.url=http://137.184.147.52:9000 -Dsonar.login=2e761092bb0aabd55e96aeeb8f3a3ab6889d97d6
+
+
+gradle sonarqube -Dsonar.projectName=SimpleGreetingGradle -Dsonar.projectKey=SimpleGreetingGradle -Dsonar.host.url=http://137.184.147.52:9000 -Dsonar.login=81486a3e900a9d21be72ed641408409951b6150a
+
+
+
+
+For Lab 12
+
+gradle sonarqube -Dsonar.projectName=RestaurantListGradle -Dsonar.projectKey=RestaurantListGradle -Dsonar.host.url=http://137.184.147.52:9000 -Dsonar.login=1043457061cd855ccc7d261d3a3f9e93949ac803
+
+
+
+  /gitcode/LabFiles/RestaurantListREPO.git

@@ -1,0 +1,29 @@
+services:
+  jenkins-server:
+    image: jenkins/jenkins:lts
+    environment:
+      - JENKINS_OPTS="--httpsPort=8443"
+    ports:
+      - 8443:8443
+      - 50000:50000
+    volumes:
+      - /usr/bin/docker:/usr/local/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_home:/var/jenkins_home
+      - ~/gitcode:/gitcode
+  sonarqube-server:
+    image: sonarqube:lts
+    ports:
+      - 9000:9000
+    volumes:
+     - sonarqube_data:/opt/sonarqube/data
+     - sonarqube_logs:/opt/sonarquge/logs
+     - sonarqube_extensions:/opt/sonarqube/extensions
+volumes:
+  jenkins_home:
+  sonarqube_data:
+  sonarqube_logs:
+  sonarqube_extensions:
+  repo_folder:
+    external: true
+    
