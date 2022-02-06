@@ -24,6 +24,3 @@ volumes:
   sonarqube_data:
   sonarqube_logs:
   sonarqube_extensions:
-  repo_folder:
-    external: true
-    
