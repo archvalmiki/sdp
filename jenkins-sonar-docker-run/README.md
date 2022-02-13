@@ -10,4 +10,9 @@ Nexxt, the Compose file starts up SonarQube container with an embedded database.
 ## Running the containers
 1) Clone this repo
 2) Navigate to this subfolder in your local copy
+3) Before running the container, create a host location folder to map to jenkins home:
+```
+mkdir -p /var/jenkins_home
+chown -R 1000:1000 /var/jenkins_home/
+```
 3) Run ```docker-compose up -d```
