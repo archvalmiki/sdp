@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jenkins-server:
+    image: jenkins/jenkins:lts
+    container_name: jenkins-server
+    environment:
+      - JENKINS_OPTS="--httpsPort=8443"
+    ports:
+      - 8443:8443
+      - 50000:50000
+    volumes:
+      - /var/jenkins_home:/var/jenkins_home
+      - /usr/bin/docker:/usr/local/bin/docker
+      - /var/run/docker.sock:/var/run/docker.sock    
