@@ -9,13 +9,18 @@ services:
     ports:
       - 8443:8443
       - 50000:50000
+    networks:
+      - jenkins-network
     volumes:
       - /var/jenkins_home:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
   sonarqube-server:
     image: sonarqube:lts
+    container_name: sonarqube-server
     ports:
       - 9000:9000
+    networks:
+      - jenkins-network
     volumes:
      - sonarqube_data:/opt/sonarqube/data
      - sonarqube_logs:/opt/sonarquge/logs
@@ -24,3 +29,5 @@ volumes:
   sonarqube_data:
   sonarqube_logs:
   sonarqube_extensions:
+networks:
+  jenkins-network:
