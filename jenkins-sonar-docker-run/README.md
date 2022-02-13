@@ -16,3 +16,5 @@ mkdir -p /var/jenkins_home
 chown -R 1000:1000 /var/jenkins_home/
 ```
 3) Run ```docker-compose up -d```
+4) Gradle is problematic in this case.  Make sure that /var/jenkins_home/.gradle is owned by the jenkins user, and not root:
+```sudo chown devuser:devuser /var/jenkins_home/.gradle```
